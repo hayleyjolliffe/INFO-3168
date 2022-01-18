@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Lab 1 — Hayley Jolliffe</title>
+    <script>
+
+      // Creating GLOBALS
+      var aVideos = [];                   // Array, stores videos
+
+      // Creating VIDEOTYPE CONSTRUCTOR
+      // new VideoType(title,category,cast,price,numRents,vidRevenue);
+      function VideoType(title,category,cast,price,numRents,vidRevenue)
+      {
+        this.title = title;               // String, "Title"
+        this.category = category;         // String, "Genre"
+        this.cast = cast;                 // String Array, "Cast"
+        this.price = price;               // Number, "Price"
+        this.numRents = numRents;         // Number, "Number"
+        this.vidRevenue = vidRevenue;     // Number, "Revenue"
+      }
+
+      // Creating CREATEVIDEO FUNCTION
+      function createVideo()
+      {
+        var rent = 0;
+        var revenue = 0.0;
+
+        aVideos.push(new VideoType(title, category, cast, price, rent, revenue));
+
+        // Testing aVideos
+        console.log(aVideos);
+      }
+
+      //
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
