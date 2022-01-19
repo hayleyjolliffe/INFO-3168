@@ -6,16 +6,16 @@
 
 			// STEP 3: Creating VIDEOTYPE CONSTRUCTOR
 			// new VideoType(title,category,cast,price);
-      		function VideoType(title,category,cast,price)
-      		{
+      			function VideoType(title,category,cast,price)
+      			{
         		this.title = title;               // String, "Title"
         		this.category = category;         // String, "Genre"
         		this.cast = cast;                 // String Array, "Cast"
         		this.price = price;               // Number, "Price"
-				    // STEP 4: Initializing numbers to 0
-				    this.numRents = 0;		          // Number, "Rents"
-        		this.vidRevenue = 0.0;		      // Number, "Revenue"
-      		}
+			// STEP 4: Initializing numbers to 0
+			this.numRents = 0;		  // Number, "Rents"
+        		this.vidRevenue = 0.0;		  // Number, "Revenue"
+      			}
 
 			// STEP 5: Creating TOTREVENUE PROTOTYPE
 		</script>
