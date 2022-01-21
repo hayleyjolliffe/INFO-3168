@@ -7,13 +7,13 @@
 			// STEP 3: Creating VIDEOTYPE CONSTRUCTOR
 			var VideoType = function(title,category,cast,price)
 			{
-				this.title = title;						// String, "Title"
-				this.category = category;				// String, "Genre"
-				this.cast = cast;						// String Array, "Cast"
-				this.price = price;						// Number, "Price"
+				this.title = title;					// String, "Title"
+				this.category = category;			// String, "Genre"
+				this.cast = cast;					// String Array, "Cast"
+				this.price = price;					// Number, "Price"
 				// STEP 4: Initializing numbers to 0
-				this.numRents = 0;						// Number, "Rents"
-				this.vidRevenue = 0;					// Number, "Revenue"
+				this.numRents = 0;					// Number, "Rents"
+				this.vidRevenue = 0;				// Number, "Revenue"
 			}
 
 			// STEP 5: Creating PROTOTYPE
@@ -23,10 +23,10 @@
 			// STEP 6: Creating PROCRENTAL
 			var procRental = function()
 			{
-				// Processing 
+				// Processing
 			}
 
-			// STEP 7: Creating ONLOAD FUNCTION
+			// STEP 7 - 1: Creating ONLOAD FUNCTION
 			function StartMeUp()
 			{
 				// STEP 7 - 2: Creating VIDEOS ARRAY
@@ -45,6 +45,7 @@
 		</script>
 	</head>
 
+	<!-- STEP 7 - 2: ONLOAD Event Handler -->
 	<body onload="StartMeUp()">
 
 	</body>
