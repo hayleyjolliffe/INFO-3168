@@ -18,13 +18,13 @@
 				this.procRental = function()
 				{
 					// Processing total rentals
-					this.numRents = videos[i].numRents;
+					this.numRents++;
 
 					// Processing single revenues
-					this.vidRevenue = videos[i].vidRevenue;
+					this.vidRevenue += this.price;
 
 					// Processing total revenue
-					VideoType.prototype.totRevenue += this.price
+					VideoType.prototype.totRevenue += this.price;
 				}
 			}
 
@@ -51,12 +51,14 @@
 				// STEP 10: Creating FOR LOOP
 				for (var i  = 0; i <= 5; i++)
 				{
-					for (var i = 0; i <= videos.length; i++)
+					for (var p = 0; p < videos.length; p++)
 					{
-						
+						videos[p].procRental();
 					}
 				}
 			}
+
+			// STEP 11: Output
 		</script>
 	</head>
 
