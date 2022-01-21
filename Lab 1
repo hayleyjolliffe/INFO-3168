@@ -14,17 +14,20 @@
 				// STEP 4: Initializing numbers to 0
 				this.numRents = 0;					// Number, "Rents"
 				this.vidRevenue = 0;				// Number, "Revenue"
+				// STEP 6: Creating PROCRENTAL
+				this.procRental = function()
+				{
+					// Processing total rentals
+					
+					// Processing single revenues
+
+					// Processing total revenue
+				}
 			}
 
 			// STEP 5: Creating PROTOTYPE
 			VideoType.prototype.cancellable = false;
 			VideoType.prototype.totRevenue = 0;
-
-			// STEP 6: Creating PROCRENTAL
-			var procRental = function()
-			{
-				// Processing
-			}
 
 			// STEP 7 - 1: Creating ONLOAD FUNCTION
 			function StartMeUp()
