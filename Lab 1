@@ -46,6 +46,16 @@
 
 				// No Time to Die
 				videos.push('No Time to Die', 'Adventure', ['Daniel Craig', 'Lea Seydoux', 'Rami Malek', 'Lashana Lynch'], 28.95);
+
+
+				// STEP 10: Creating FOR LOOP
+				for (var i  = 0; i <= 5; i++)
+				{
+					for (var i = 0; i <= videos.length; i++)
+					{
+						
+					}
+				}
 			}
 		</script>
 	</head>
