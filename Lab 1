@@ -18,10 +18,13 @@
 				this.procRental = function()
 				{
 					// Processing total rentals
-					
+					this.numRents = videos[i].numRents;
+
 					// Processing single revenues
+					this.vidRevenue = videos[i].vidRevenue;
 
 					// Processing total revenue
+					
 				}
 			}
 
