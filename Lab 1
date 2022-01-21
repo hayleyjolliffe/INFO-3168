@@ -39,13 +39,13 @@
 
 				// STEPS 8 + 9: Injecting sample data into ARRAY
 				// Rogue One
-				videos.push('Rogue One', 'Sci-Fi', ['Felicity Jones', 'Mads Mikkelson', 'Riz Ahmed'], 17.95);
+				videos.push('Rogue One', 'Sci-Fi', ['Felicity Jones', '<br>', 'Mads Mikkelson', '<br>', 'Riz Ahmed'], 17.95);
 
 				// Arrival
-				videos.push('Arrival', 'Sci-Fi', ['Amy Adams', 'Jeremy Renner'], 17.95);
+				videos.push('Arrival', 'Sci-Fi', ['Amy Adams', '<br>', 'Jeremy Renner'], 17.95);
 
 				// No Time to Die
-				videos.push('No Time to Die', 'Adventure', ['Daniel Craig', 'Lea Seydoux', 'Rami Malek', 'Lashana Lynch'], 28.95);
+				videos.push('No Time to Die', 'Adventure', ['Daniel Craig', '<br>', 'Lea Seydoux', '<br>', 'Rami Malek', '<br>', 'Lashana Lynch'], 28.95);
 
 
 				// STEP 10: Creating FOR LOOP
@@ -53,12 +53,28 @@
 				{
 					for (var p = 0; p < videos.length; p++)
 					{
-						videos[p].procRental();
+						VideoType.procRental();
+						// STEP 11: Output
+						document.write(
+							videos[p].title + ", " + 
+							videos[p].category + ", " + 
+							videos[p].price + ", " + 
+							videos[p].numRents + ", " + 
+							videos[p].vidRevenue + "<br> Cast: <br>" + 
+							videos[p].cast + "<br><br>"
+						);
+						break;
 					}
 				}
 			}
 
-			// STEP 11: Output
+			// STEP 11 - 2: Output
+			// Total Revenue
+			document.write(
+				"Total Rental Revenue: $" +
+				VideoType.prototype.totRevenue.toFixed(2)
+			);
+
 		</script>
 	</head>
 
