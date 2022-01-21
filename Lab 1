@@ -1,4 +1,4 @@
-<!-- STEPS 1 + 2 -->
+<!-- STEPS 1 + 2: Setup -->
 <html>
 	<head>
 		<title>Lab 1 — Hayley Jolliffe</title>
@@ -18,14 +18,12 @@
 
 			// STEP 5: Creating PROTOTYPE
 			VideoType.prototype.cancellable = false;
-			VideoType.prototype.totRevenue = function()
-			{
-				// STEP 6: Creating PROCRENTAL
-				// Increments rentals, calculates single video revenue, and total revenue
-				var procRental = function()
-				{
+			VideoType.prototype.totRevenue = 0;
 
-				}
+			// STEP 6: Creating PROCRENTAL
+			var procRental = function()
+			{
+				// Processing 
 			}
 
 			// STEP 7: Creating ONLOAD FUNCTION
