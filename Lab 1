@@ -1,31 +1,36 @@
 <!-- STEPS 1 + 2 -->
 <html>
-	<head>
-		<title>Lab 1 — Hayley Jolliffe</title>
-		<script>
+  <head>
+  <title>Lab 1 — Hayley Jolliffe</title>
+  <script>
 
-			// STEP 3: Creating VIDEOTYPE CONSTRUCTOR
-			// new VideoType(title,category,cast,price);
-      		function VideoType(title,category,cast,price)
-      		{
-        		this.title = title;               // String, "Title"
-        		this.category = category;         // String, "Genre"
-        		this.cast = cast;                 // String Array, "Cast"
-        		this.price = price;               // Number, "Price"
-				// STEP 4: Initializing numbers to 0
-				this.numRents = 0;		          // Number, "Rents"
-        		this.vidRevenue = 0.0;		      // Number, "Revenue"
-      		}
+    // STEP 3: Creating VIDEOTYPE CONSTRUCTOR
+    var VideoType = function(title,category,cast,price)
+    {
+      this.title = title;				// String, "Title"
+      this.category = category;				// String, "Genre"
+      this.cast = cast;					// String Array, "Cast"
+      this.price = price;				// Number, "Price"
+      // STEP 4: Initializing numbers to 0
+      this.numRents = 0;				// Number, "Rents"
+      this.vidRevenue = 0;				// Number, "Revenue"
+    }
 
-			// STEP 5: Creating TOTREVENUE PROTOTYPE
-			VideoType.prototype.cancellable = false;
-			VideoType.prototype.totRevenue = function() {
+    // STEP 5: Creating PROTOTYPE
+    VideoType.prototype.cancellable = false;
+    VideoType.prototype.totRevenue = function()
+    {
+      // STEP 6: Creating PROCRENTAL
+      // Increments rentals, calculates single video revenue, and total revenue
+      var procRental = function()
+      {
 
-			}
-		</script>
-	</head>
+      }
+    }
+  </script>
+  </head>
 
-	<body>
+  <body>
 
-	</body>
+  </body>
 </html>
