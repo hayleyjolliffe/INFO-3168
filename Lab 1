@@ -24,12 +24,11 @@
 					this.vidRevenue = videos[i].vidRevenue;
 
 					// Processing total revenue
-					
+					VideoType.prototype.totRevenue += this.price
 				}
 			}
 
 			// STEP 5: Creating PROTOTYPE
-			VideoType.prototype.cancellable = false;
 			VideoType.prototype.totRevenue = 0;
 
 			// STEP 7 - 1: Creating ONLOAD FUNCTION
