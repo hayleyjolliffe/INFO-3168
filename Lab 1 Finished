@@ -1,0 +1,106 @@
+<!-- STEPS 1 + 2: Setup -->
+<html>
+	<head>
+		<title>Lab 1 — Hayley Jolliffe</title>
+		<script>
+
+			// STEP 3: Creating VIDEOTYPE CONSTRUCTOR
+			var VideoType = function(title,category,cast,price)
+			{
+				this.title = title;					// String, "Title"
+				this.category = category;			// String, "Genre"
+				this.cast = cast;					// String Array, "Cast"
+				this.price = price;					// Number, "Price"
+				// STEP 4: Initializing numbers to 0
+				this.numRents = 0;					// Number, "Rents"
+				this.vidRevenue = 0;				// Number, "Revenue"
+				// STEP 6: Creating PROCRENTAL
+				this.procRental = function()
+				{
+					// Processing total rentals
+					this.numRents++;
+
+					// Processing single revenues
+					this.vidRevenue += this.price;
+
+					// Processing total revenue
+					VideoType.prototype.totRevenue += this.price;
+				}
+			}
+
+			// STEP 5: Creating PROTOTYPE
+			VideoType.prototype.totRevenue = 0;
+
+			// STEP 7 - 1: Creating ONLOAD FUNCTION
+			function StartMeUp()
+			{
+				// STEP 7 - 2: Creating VIDEOS ARRAY
+				var videos = [];
+
+				// STEPS 8 + 9: Injecting sample data into ARRAY
+				// Rogue One
+				videos.push(new VideoType('Rogue One', 'Sci-Fi', ['Felicity Jones, <br>','Mads Mikkelson, <br>','Riz Ahmed'], 17.95));
+
+				// Arrival
+				videos.push(new VideoType('Arrival', 'Sci-Fi', ['Amy Adams', '<br>', 'Jeremy Renner'], 17.95));
+
+				// No Time to Die
+				videos.push(new VideoType('No Time to Die', 'Adventure', ['Daniel Craig', '<br>', 'Lea Seydoux', '<br>', 'Rami Malek', '<br>', 'Lashana Lynch'], 28.95));
+
+
+				// STEP 10: Creating FOR LOOP
+				for (var i  = 0; i < 5; i++)
+				{
+					for (var p = 0; p < videos.length; p++)
+					{
+						var current = videos[p];
+						current.procRental();
+					}
+				}
+
+				// STEP 11: Output
+				// Rogue One
+				document.write(
+					videos[0].title + ", " + 
+					videos[0].category + ", " + 
+					videos[0].price + ", " + 
+					videos[0].numRents + ", " + 
+					videos[0].vidRevenue + "<br> Cast: <br>" + 
+					videos[0].cast + "<br><br>"
+				);
+			
+				// Arrival
+				document.write(
+					videos[1].title + ", " + 
+					videos[1].category + ", " + 
+					videos[1].price + ", " + 
+					videos[1].numRents + ", " + 
+					videos[1].vidRevenue + "<br> Cast: <br>" + 
+					videos[1].cast + "<br><br>"
+				);
+
+				// No Time to Die
+				document.write(
+					videos[2].title + ", " + 
+					videos[2].category + ", " + 
+					videos[2].price + ", " + 
+					videos[2].numRents + ", " + 
+					videos[2].vidRevenue + "<br> Cast: <br>" + 
+					videos[2].cast + "<br><br>"
+				);
+
+				// Total Revenue
+				document.write(
+					"Total Rental Revenue: $" +
+					VideoType.prototype.totRevenue.toFixed(2)
+				);
+			}
+
+		</script>
+	</head>
+
+	<!-- STEP 7 - 2: ONLOAD Event Handler -->
+	<body onload="StartMeUp()">
+
+	</body>
+</html>
