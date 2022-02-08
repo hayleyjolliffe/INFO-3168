@@ -71,6 +71,8 @@
         <option value="31">31</option>
     </select>
 
+    <button type="button" id="retrieve">Retrieve</button>
+
 </body>
 
 </html>
