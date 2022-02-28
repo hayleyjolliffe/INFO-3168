@@ -29,10 +29,32 @@
     /*-- FOR INPUT ID 'DAY' --*/
 }
 
+
 /*-- Retrieved Games --*/
 #retrieved {
     /*-- FOR DIV ID 'RETRIEVED' --*/
 }
+
+#home {
+    /*-- FOR TEXTAREA ID 'HOMETEAM' --*/
+}
+
+#away {
+    /*-- FOR TEXTAREA ID 'AWAYTEAM' --*/
+}
+
+#winning {
+    /*-- FOR TEXTAREA ID 'WINNINGPITCHER' --*/
+}
+
+#losing {
+    /*-- FOR TEXTAREA ID 'LOSINGPITCHER' --*/
+}
+
+#venue {
+    /*-- FOR TEXTAREA ID 'VENUE' --*/
+}
+
 
 /*-- Buttons --*/
 #buttons {
