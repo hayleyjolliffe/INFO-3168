@@ -6,7 +6,7 @@
 
     Hayley_Project1.html
 
-    Hayley Jolliffe - h_jolliffe128179
+    Hayley Jolliffe - [redacted]
  
 -->
 
@@ -84,7 +84,7 @@
         <option value="31">31</option>
     </select>
 
-    <button type="button" id="retrieve">Retrieve</button>
+    <button type="button" id="retrieve" onclick="findGame();">Retrieve</button>
 </div>
 
 </body>
