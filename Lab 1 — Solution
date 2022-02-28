@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>Lab1 Solution</title>
+		<script language="JavaScript" type="text/JavaScript">
+			// declared as a function expression
+			// alternatively would be a function literal
+			// function VideoType(title, category, cast, price) {
+			var VideoType = function(title, category, cast, price) {
+				this.title = title;
+				this.category = category;
+				this.cast = cast; // or ...
+				// var localCast = cast;
+				this.price = price;
+				this.numRents = 0;
+				this.vidRevenue = 0.0;
+			
+				// procRental is a "method"
+				this.procRental = function() {
+					this.numRents++;
+					this.vidRevenue += this.price;
+					VideoType.prototype.totRevenue += this.price;
+				}
+			}
+			
+			VideoType.prototype.totRevenue = 0.0;
+			
+			function startMeUp() {
+				var videos = [];
+				// first object example uses a separate "newCast" variable for the array
+				var newCast = ["Felicity Jones", "Mads Mikkelsen", "Riz Ahmed"];
+				videos[0] = new VideoType("Rogue One", "SciFi", newCast, 17.95);
+				
+				// now demonstrating "cast" as array literal
+				videos[1] = new VideoType("Arrival", "SciFi", ["Amy Adams", "Jeremy Renner"], 17.95);
+				videos[2] = new VideoType("No Time to Die", "Adventure", ["Daniel Craig", "Lea Seydoux", "Rami Malek", "Lashana Lynch"], 28.95);
+				
+				// test procRental method 5 iterations
+				for (var i = 0; i < 5; i++) {
+					for (var j = 0; j < videos.length; j++) {
+						videos[j].procRental();
+					}
+				}
+				
+				// generate detailed report
+				var text = "";
+				for (var i = 0; i < videos.length; i++) {
+					text += "<br>" + videos[i].title + ", " + videos[i].category + ", $" + videos[i].price.toFixed(2) + ", " + videos[i].numRents + ", $" + videos[i].vidRevenue.toFixed(2);
+					text += "<br>Cast:<br>";
+					for (var j = 0; j < videos[i].cast.length; j++) {
+						text += videos[i].cast[j] + "<br>";
+					}
+				}
+				
+				text += "<br>Total Rental Revenue: $" + VideoType.prototype.totRevenue.toFixed(2);
+				document.write(text);
+			}
+			
+		</script>
+	</head>
+	<body onload="startMeUp();">
+	
+	</body>
+</html>
