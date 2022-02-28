@@ -29,8 +29,16 @@
     /*-- FOR INPUT ID 'DAY' --*/
 }
 
-/*-- --*/
+/*-- Retrieved Games --*/
+#retrieved {
+    /*-- FOR DIV ID 'RETRIEVED' --*/
+}
 
-/*-- --*/
+/*-- Buttons --*/
+#buttons {
+    /*-- FOR DIV ID 'BUTTONS' --*/
+}
 
-/*-- --*/
+#retrieve {
+    /*-- FOR 'RETRIEVE' BUTTON --*/
+}
