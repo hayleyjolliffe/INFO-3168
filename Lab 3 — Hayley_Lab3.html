@@ -61,14 +61,14 @@
 
             // Creating dataMap map object
             const dataMap = new Map();
-            dataMap.set(document.getElementById(txtFirst), document.getElementById(txtFirst).value);
-            dataMap.set(document.getElementById(txtLast), document.getElementById(txtLast).value);
-            dataMap.set(document.getElementById(txtAddress), document.getElementById(txtAddress).value);
-            dataMap.set(document.getElementById(txtCity), document.getElementById(txtCity).value);
-            dataMap.set(document.getElementById(txtPostal), document.getElementById(txtPostal).value);
-            dataMap.set(document.getElementById(txtPhone), document.getElementById(txtPhone).value);
-            dataMap.set(document.getElementById(selProvinces), document.getElementById(selProvinces).value);
-            dataMap.set(document.getElementById(chkMember), document.getElementById(chkMember).value);
+            dataMap.set('txtFirst = ', document.getElementById(txtFirst).value);
+            dataMap.set('txtLast = ', document.getElementById(txtLast).value);
+            dataMap.set('txtAddress = ', document.getElementById(txtAddress).value);
+            dataMap.set('txtCity = ', document.getElementById(txtCity).value);
+            dataMap.set('txtPostal = ', document.getElementById(txtPostal).value);
+            dataMap.set('txtPhone = ', document.getElementById(txtPhone).value);
+            dataMap.set('selProvinces = ', document.getElementById(selProvinces).value);
+            dataMap.set('chkMember = ', document.getElementById(chkMember).value);
 
             // Creating dumpSet function
             function dumpSet(dataSet)
