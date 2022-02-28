@@ -48,14 +48,16 @@
 
             // Creating dataSet to store all text boxes
             const dataSet = new Set();
-            dataSet.add(document.getElementById(txtFirst));
-            dataSet.add(document.getElementById(txtLast));
-            dataSet.add(document.getElementById(txtAddress));
-            dataSet.add(document.getElementById(txtCity));
-            dataSet.add(document.getElementById(txtPostal));
-            dataSet.add(document.getElementById(txtPhone));
-            dataSet.add(document.getElementById(selProvinces));
-            dataSet.add(document.getElementById(chkMember));
+            dataSet.add(document.getElementById(txtFirst).innerHTML);
+            dataSet.add(document.getElementById(txtLast).innerHTML);
+            dataSet.add(document.getElementById(txtAddress).innerHTML);
+            dataSet.add(document.getElementById(txtCity).innerHTML);
+            dataSet.add(document.getElementById(txtPostal).innerHTML);
+            dataSet.add(document.getElementById(txtPhone).innerHTML);
+            dataSet.add(document.getElementById(selProvinces).innerHTML);
+            dataSet.add(document.getElementById(chkMember).innerHTML);
+
+            console.log(dataSet);
 
             // Creating dataMap map object
             const dataMap = new Map();
@@ -67,6 +69,16 @@
             dataMap.set(document.getElementById(txtPhone), '');
             dataMap.set(document.getElementById(selProvinces), '');
             dataMap.set(document.getElementById(chkMember), '');
+
+            // Creating dumpSet function
+            function dumpSet(dataSet)
+            {
+                console.log(----------);
+                console.log();
+                console.log(----------);
+                console.log();
+                console.log(----------);
+            }
 
 		</script>
 	</head>
