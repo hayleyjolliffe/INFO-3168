@@ -22,3 +22,10 @@ var awayTeam = document.getElementById().value;
 var winningPitcher = document.getElementById().value;
 var losingPitcher = document.getElementById().value;
 var venue = document.getElementById().value;
+
+
+// AJAX call to pull game stats
+function findGame()
+{
+    var xhttp = new XMLHttpRequest();
+}
