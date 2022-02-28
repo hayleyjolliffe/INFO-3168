@@ -97,7 +97,9 @@
 </div>
 
 <div id="buttons">
-
+    <button id="" onclick="">Previous Game</button>
+    <button id="" onclick="">Next Game</button>
+    <button id="" onclick="">Save Changes</button>
 </div>
 
 </body>
