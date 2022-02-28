@@ -10,4 +10,27 @@
 
 */
 
+/*-- Globals --*/
+
+/*-- Dropdowns --*/
+#dropdowns {
+    /*-- FOR DIV ID 'DROPDOWNS'--*/
+}
+
+#year {
+    /*-- FOR INPUT ID 'YEAR' --*/
+}
+
+#month {
+    /*-- FOR INPUT ID 'MONTH' --*/
+}
+
+#day {
+    /*-- FOR INPUT ID 'DAY' --*/
+}
+
+/*-- --*/
+
+/*-- --*/
+
 /*-- --*/
