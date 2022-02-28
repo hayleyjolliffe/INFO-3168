@@ -48,14 +48,14 @@
 
             // Creating dataSet to store all text boxes
             const dataSet = new Set();
-            dataSet.add(document.getElementById(txtFirst).innerHTML);
-            dataSet.add(document.getElementById(txtLast).innerHTML);
-            dataSet.add(document.getElementById(txtAddress).innerHTML);
-            dataSet.add(document.getElementById(txtCity).innerHTML);
-            dataSet.add(document.getElementById(txtPostal).innerHTML);
-            dataSet.add(document.getElementById(txtPhone).innerHTML);
-            dataSet.add(document.getElementById(selProvinces).innerHTML);
-            dataSet.add(document.getElementById(chkMember).innerHTML);
+            dataSet.add(document.getElementById(txtFirst).value);
+            dataSet.add(document.getElementById(txtLast).value);
+            dataSet.add(document.getElementById(txtAddress).value);
+            dataSet.add(document.getElementById(txtCity).value);
+            dataSet.add(document.getElementById(txtPostal).value);
+            dataSet.add(document.getElementById(txtPhone).value);
+            dataSet.add(document.getElementById(selProvinces).value);
+            dataSet.add(document.getElementById(chkMember).value);
 
             console.log(dataSet);
 
