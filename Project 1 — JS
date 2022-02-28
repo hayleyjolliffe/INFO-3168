@@ -10,4 +10,15 @@
 
 */
 
-// 
+// Creating globals for storing inputs
+// Game date input
+var year = document.getElementById();
+var month = document.getElementById();
+var day = document.getElementById();
+
+// Game stats output
+var homeTeam = document.getElementById();
+var awayTeam = document.getElementById();
+var winningPitcher = document.getElementById();
+var losingPitcher = document.getElementById();
+var venue = document.getElementById();
