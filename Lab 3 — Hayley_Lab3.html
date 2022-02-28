@@ -48,36 +48,30 @@
 
             // Creating dataSet to store all text boxes
             const dataSet = new Set();
-            dataSet.add(document.getElementById(txtFirst).value);
-            dataSet.add(document.getElementById(txtLast).value);
-            dataSet.add(document.getElementById(txtAddress).value);
-            dataSet.add(document.getElementById(txtCity).value);
-            dataSet.add(document.getElementById(txtPostal).value);
-            dataSet.add(document.getElementById(txtPhone).value);
-            dataSet.add(document.getElementById(selProvinces).value);
-            dataSet.add(document.getElementById(chkMember).value);
-
-            console.log(dataSet);
+            dataSet.add(document.txtFirst);
+            dataSet.add(document.txtLast);
+            dataSet.add(document.txtAddress);
+            dataSet.add(document.txtCity);
+            dataSet.add(document.txtPostal);
+            dataSet.add(document.txtPhone);
+            dataSet.add(document.selProvinces);
+            dataSet.add(document.chkMember);
 
             // Creating dataMap map object
             const dataMap = new Map();
-            dataMap.set('txtFirst = ', document.getElementById(txtFirst).value);
-            dataMap.set('txtLast = ', document.getElementById(txtLast).value);
-            dataMap.set('txtAddress = ', document.getElementById(txtAddress).value);
-            dataMap.set('txtCity = ', document.getElementById(txtCity).value);
-            dataMap.set('txtPostal = ', document.getElementById(txtPostal).value);
-            dataMap.set('txtPhone = ', document.getElementById(txtPhone).value);
-            dataMap.set('selProvinces = ', document.getElementById(selProvinces).value);
-            dataMap.set('chkMember = ', document.getElementById(chkMember).value);
+            dataMap.set('txtFirst = ', document.txtFirst);
+            dataMap.set('txtLast = ', document.txtLast);
+            dataMap.set('txtAddress = ', document.txtAddress);
+            dataMap.set('txtCity = ', document.txtCity);
+            dataMap.set('txtPostal = ', document.txtPostal);
+            dataMap.set('txtPhone = ', document.txtPhone);
+            dataMap.set('selProvinces = ', document.selProvinces);
+            dataMap.set('chkMember = ', document.chkMember);
 
             // Creating dumpSet function
             function dumpSet(dataSet)
             {
-                console.log(----------);
                 console.log();
-                console.log(----------);
-                console.log();
-                console.log(----------);
             }
 
 		</script>
