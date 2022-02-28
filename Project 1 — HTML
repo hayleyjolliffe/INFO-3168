@@ -1,3 +1,15 @@
+<!-- 
+
+    INFO-3168 - Project 1
+    Major League Baseball Form (v1.0)
+    Due: 10 Mar. 22
+
+    Hayley_Project1.html
+
+    Hayley Jolliffe - h_jolliffe128179
+ 
+-->
+
 <!DOCTYPE html>
 <html>
 
@@ -11,6 +23,7 @@
 
 <body>
 
+<div id="dropdowns">
     <!-- Creating Dropdowns -->
     
     <!-- Year -->
@@ -72,6 +85,7 @@
     </select>
 
     <button type="button" id="retrieve">Retrieve</button>
+</div>
 
 </body>
 
