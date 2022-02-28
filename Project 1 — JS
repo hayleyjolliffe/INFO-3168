@@ -12,13 +12,13 @@
 
 // Creating globals for storing inputs
 // Game date input
-var year = document.getElementById();
-var month = document.getElementById();
-var day = document.getElementById();
+var year = document.getElementById().value;
+var month = document.getElementById().value;
+var day = document.getElementById().value;
 
 // Game stats output
-var homeTeam = document.getElementById();
-var awayTeam = document.getElementById();
-var winningPitcher = document.getElementById();
-var losingPitcher = document.getElementById();
-var venue = document.getElementById();
+var homeTeam = document.getElementById().value;
+var awayTeam = document.getElementById().value;
+var winningPitcher = document.getElementById().value;
+var losingPitcher = document.getElementById().value;
+var venue = document.getElementById().value;
