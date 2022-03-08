@@ -6,7 +6,7 @@
 
     Hayley_Project1.js
     
-    Hayley Jolliffe - h_jolliffe128179
+    Hayley Jolliffe - [redacted]
 
 */
 
@@ -67,10 +67,49 @@ function findGame() {
         }
     }
 
-    // AJAX call to pull game stats
-    let xhttp = new XMLHttpRequest();
+    // Creating async AJAX function
+    const ISOK = 200;
+    let request = new XMLHttpRequest();
+
+    // Building URL
+    // CONCAT URL SHOULD BE https://gd2.mlb.com/components/game/mlb/year_XXXX/month_XX/day_XX/master_scoreboard.json
+    let baseball = "";
+    // Validating month
+    if (concatMonth < 10) {
+       concatMonth = "0" + concatMonth;
+    }
+    else {
+        concatMonth = concatMonth;
+    }
+    // Validating day
+    if (concatDay < 10) {
+        concatDay = "0" + concatDay;
+    }
+    else {
+        concatDay = concatDay;
+    }
+
+
+    function getAsync(baseball) {
+        // Calling event handler
+        request.onload = call();
+        request.open("GET", url, true);
+        request.send();
+    }
+
+    /*
+    function call() {
+        if (request.status === ISOK) {
+            let object = JSON.parse(request.responseText);
+            // Collecting data from JSON
+            let oHomeTeam = object.data.games.game[0].home_team_name;
+            let o = object.data.games.game[0].;
+            let o = object.data.games.game[0].;
+            let o = object.data.games.game[0].;
+            let o = object.data.games.game[0].;
+            let o = object.data.games.game[0].;
+            let o = object.data.games.game[0].;
+        }
+    }
+    */
 }
-
-
-// CONCAT URL SHOULD BE
-// https://gd2.mlb.com/components/game/mlb/year_XXXX/month_XX/day_XX/master_scoreboard.json
