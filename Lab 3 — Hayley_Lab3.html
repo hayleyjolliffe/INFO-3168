@@ -1,13 +1,75 @@
 <html>
 	<head>
 		<title>Lab #3</title>
+	</head>
+	<body>
+		<div>First Name</div>
+		<input type="text" id="txtFirst" maxlength="50" size="50" value="Sherlock" />
+		<br /><br />
+		<div>Last Name</div>
+		<input type="text" id="txtLast" maxlength="50" size="50" value="Holmes" />
+		<br /><br />
+		<div>Address</div>
+		<input type="text" id="txtAddress" maxlength="50" size="50" value="221 B Baker"/>
+		<br /><br />
+		<div>City</div>
+		<input type="text" id="txtCity" maxlength="40" size="40" value="Burnaby"/>
+		<br /><br />
+		<div>Province</div>
+		<select id="selProvinces" onchange="testMemberProvince();">
+			<option value="British Columbia">British Columbia</option>
+	  		<option value="Alberta">Alberta</option>
+	  		<option value="Saskatchewan">Saskatchewan</option>
+	  		<option value="Manitoba">Manitoba</option>
+			<option value="Ontario">Ontario</option>
+			<option value="Quebec">Quebec</option>
+			<option value="Nova Scotia">Nova Scotia</option>
+			<option value="Prince Edward Island">Prince Edward Island</option>
+			<option value="Newfoundland & Labrador">Newfoundland & Labrador</option>
+			<option value="Northwest Territories">Northwest Territories</option>
+		</select>
+		<br /><br />
+		<div>Postal Code</div>
+		<input type="text" id="txtPostal" maxlength="7" size="7" value="N6H 1V6"/>
+		<br /><br />
+		<div>Telephone</div>
+		<input type="text" id="txtPhone" maxlength="12" size="12" value="519 555-1212"/>
+		<br /><br />
+		<label><input type="checkbox" id="chkMember" onclick="testMemberProvince();" />Is Member?</label><br />
+		<br /><br />
+		<input type="button" id="btnSubmit"  value="Submit" onclick="submit();"/>
 		<script language="JavaScript" type="text/JavaScript">
+			// *************************************************************
+            const dataSet = new Set();
+            const dataMap = new Map();
+
+
+			// Creating variables to store values from inputs
+			let first = $gel("txtFirst").value;
+			let last = $gel("txtLast").value;
+			let address = $gel("txtAddress").value;
+			let city = $gel("txtCity").value;
+			let postal = $gel("txtPostal").value;
+			let phone = $gel("txtPhone").value;
+			let provinces = $gel("selProvinces").value;
+			let member = $gel("chkMember").value;
+
+			// Validating member status
+			if (member.checked == true)
+			{
+				member = "True";
+			}
+			else
+			{
+				member = "False";
+			}
+
 			// *************************************************************
 			// event handler is shared by the pulldown and checkbox controls
 			// to ensure that the only "Ontario" customers are members
 			function testMemberProvince() {
-				var ref = $gel("selProvinces");
-				var selectedProv = ref.options[ref.selectedIndex].text;
+				let ref = $gel("selProvinces");
+				let selectedProv = ref.options[ref.selectedIndex].text;
 					
 				if ($gel("chkMember").checked && selectedProv !== "Ontario") {
 					alert("Only Ontario Customers are able to be members");
@@ -25,8 +87,50 @@
 				testEmpty("txtCity");
 				testEmpty("txtPostal");
 				testEmpty("txtPhone");
+
+            	dataSet.add(first);
+            	dataSet.add(last);
+            	dataSet.add(address);
+            	dataSet.add(city);
+            	dataSet.add(postal);
+            	dataSet.add(phone);
+            	dataSet.add(provinces);
+            	dataSet.add(member);
+
+                dumpSet(dataSet);
+
+            	// Creating dataMap map object
+            	dataMap.set('txtFirst', first);
+            	dataMap.set('txtLast', last);
+            	dataMap.set('txtAddress', address);
+            	dataMap.set('txtCity', city);
+            	dataMap.set('txtPostal', postal);
+            	dataMap.set('txtPhone', phone);
+            	dataMap.set('selProvinces', provinces);
+            	dataMap.set('chkMember', member);
+
+            	
+				dumpMap(dataMap);
 			}
 			
+            function dumpSet()
+            {
+				dataSet.forEach(loopFor);
+                function loopFor(value) {
+                    console.log(value);
+                }
+            }
+
+	        function dumpMap()
+			{
+				for (let[key, value] of dataMap)
+				{
+					console.log(key + " = " + value);
+				}
+			}
+
+				
+
 			// *********************************************
 			// helper function is used to test each text box
 			// to ensure that something was entered
@@ -46,42 +150,5 @@
 				return document.getElementById(id);
 			}
 		</script>
-	</head>
-	<body>
-		<div>First Name</div>
-		<input type="text" id="txtFirst" maxlength="50" size="50" value="Sherlock" />
-		<br /><br />
-		<div>Last Name</div>
-		<input type="text" id="txtLast" maxlength="50" size="50" value="Holmes" />
-		<br /><br />
-		<div>Address</div>
-		<input type="text" id="txtAddress" maxlength="50" size="50" />
-		<br /><br />
-		<div>City</div>
-		<input type="text" id="txtCity" maxlength="40" size="40" />
-		<br /><br />
-		<div>Province</div>
-		<select id="selProvinces" onchange="testMemberProvince();">
-			<option >British Columbia</option>
-	  		<option >Alberta</option>
-	  		<option >Saskatchewan</option>
-	  		<option >Manitoba</option>
-			<option >Ontario</option>
-			<option >Quebec</option>
-			<option >Nova Scotia</option>
-			<option >Prince Edward Island</option>
-			<option >Newfoundland & Labrador</option>
-			<option >Northwest Territories</option>
-		</select>
-		<br /><br />
-		<div>Postal Code</div>
-		<input type="text" id="txtPostal" maxlength="7" size="7" />
-		<br /><br />
-		<div>Telephone</div>
-		<input type="text" id="txtPhone" maxlength="12" size="12" />
-		<br /><br />
-		<label><input type="checkbox" id="chkMember" onclick="testMemberProvince();" />Is Member?</label><br />
-		<br /><br />
-		<input type="button" id="btnSubmit"  value="Submit" onclick="submit();"/>
 	</body>
 </html>
