@@ -17,14 +17,14 @@ let month = parseInt($gel("month").value);
 let day = parseInt($gel("day").value);
 
 // Date arrays
-let aYear = ['2016', '2017', '2018'];
-let aMonth = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
-let aDay = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'];
+let aYear = [2016, 2017, 2018];
+let aMonth = [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12];
+let aDay = [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
 // Creating separate variables for concatenating URL
-let concatYear;
-let concatMonth;
-let concatDay;
+let concatYear = 0;
+let concatMonth = 0;
+let concatDay = 0;
 
 // Game stats output
 let homeTeam = $gel("homeTeam").innerHTML;
@@ -38,16 +38,28 @@ function $gel(id) {
     return document.getElementById(id);
 }
 
-// Validating date for findGame()
-// Year
-for (let i = 0; i <= aYear.length; i++) {
-    if (year == aYear[i]) {
-
-    }
+// Creating refresh() function for date input onchange()
+function refresh() {
+    year = parseInt($gel("year").value);
+    month = parseInt($gel("month").value);
+    day = parseInt($gel("day").value);
 }
 
 // Creating findGame() function for retrieving game stats
 function findGame() {
+    // Validating date for findGame()
+    // Year
+    for (let i = 0; i <= aYear.length; i++) {
+        if (year == aYear[i]) {
+            console.log(concatYear);
+            concatYear = parseInt(aYear[i]);
+        
+            // Testing CONCATYEAR, expected output '2016'
+            console.log(concatYear);
+            // RETURNING NaN
+        }
+    }
+
     // AJAX call to pull game stats
     let xhttp = new XMLHttpRequest();
 
