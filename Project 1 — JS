@@ -71,33 +71,37 @@ function findGame() {
     const ISOK = 200;
     let request = new XMLHttpRequest();
 
-    // Building URL
-    // CONCAT URL SHOULD BE https://gd2.mlb.com/components/game/mlb/year_XXXX/month_XX/day_XX/master_scoreboard.json
-    let baseball = "";
-    // Validating month
-    if (concatMonth < 10) {
-       concatMonth = "0" + concatMonth;
-    }
-    else {
-        concatMonth = concatMonth;
-    }
-    // Validating day
-    if (concatDay < 10) {
-        concatDay = "0" + concatDay;
-    }
-    else {
-        concatDay = concatDay;
-    }
-
-
-    function getAsync(baseball) {
+    function getAsync() {
+        // Building URL
+        // CONCAT URL SHOULD BE https://gd2.mlb.com/components/game/mlb/year_XXXX/month_XX/day_XX/master_scoreboard.json
+        let baseball = "";
+        // Validating month
+        if (concatMonth < 10) {
+            concatMonth = "0" + concatMonth;
+        }
+        else {
+            concatMonth = concatMonth;
+        }
+        // Validating day
+        if (concatDay < 10) {
+            concatDay = "0" + concatDay;
+        }
+        else {
+            concatDay = concatDay;
+        }
+        
+        // Concatenating
+        baseball = "https://gd2.mlb.com/components/game/mlb/year_" + concatYear + "/month_" + concatMonth + "/day_" + concatDay + "/master_scoreboard.json";
+        // Checking URL concatenation
+        console.log(baseball);
+        
         // Calling event handler
         request.onload = call();
         request.open("GET", url, true);
         request.send();
     }
 
-    /*
+    
     function call() {
         if (request.status === ISOK) {
             let object = JSON.parse(request.responseText);
@@ -109,7 +113,20 @@ function findGame() {
             let o = object.data.games.game[0].;
             let o = object.data.games.game[0].;
             let o = object.data.games.game[0].;
+
+            // Stringifying collected JSON
+            let stringify = JSON.stringify(object);
+
+            // Populating textareas with JSON data
+            homeTeam = ;
+            awayTeam = ;
+            winningPitcher = ( + );
+            losingPitcher = ( + );
+            venue = ;
         }
     }
     */
+    
+    // Call getAsync to get the data
+    getAsync();
 }
