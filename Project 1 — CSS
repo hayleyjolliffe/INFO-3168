@@ -11,10 +11,176 @@
 */
 
 /*-- Globals --*/
+:root {
+    background-color:#fff;
+    color:#000;
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:16px;
+    font-weight:500;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    padding:0.5% 1% 0.5% 1%;
+    margin:0 0 0.5% 0;
+    text-decoration: none;
+    background: #041e42;
+    color: #ffffff;
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input {
+    width:10vw;
+    margin:2%;
+}
+
+textarea {
+    max-width:20vw;
+    width:10vw;
+    height:130%;
+
+}
+
+h1 {
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:108px;
+    font-weight:800;
+    line-height:110%;
+    text-decoration:none;
+}
+
+h2 {
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:96px;
+    font-weight:800;
+    line-height:110%;
+    text-decoration:none;
+}
+
+h3 {
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:72px;
+    font-weight: 800;
+    line-height:110%;
+    text-decoration:none;
+}
+
+h4 {
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:56px;
+    font-weight:500;
+    line-height:110%;
+    text-decoration:none;
+}
+
+h5 {
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:36px;
+    font-weight:500;
+    line-height:110%;
+    text-decoration:none;
+}
+
+h6 {
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:24px;
+    font-weight:400;
+    line-height:110%;
+    text-decoration:none;
+}
+
+p {
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:16px;
+    font-weight:400;
+    line-height:110%;
+    text-decoration:none;
+}
+
+a {
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:inherit;
+    font-weight:inherit;
+    line-height:110%;
+    text-decoration:underline;
+}
+
+a:hover {
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:inherit;
+    font-weight:inherit;
+    line-height:110%;
+    text-decoration:none;
+}
+
+a:active {
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:inherit;
+    font-weight:inherit;
+    line-height:110%;
+    text-decoration:line-through;
+}
+
+/*-- Header --*/
+#navbar {
+    background-color:#041e42;
+    color:#ececec;
+    font-family:proxima-nova, Helvetica, sans-serif;
+    width:100vw;
+    max-height:10vh;
+    height:auto;
+    margin:0;
+    padding:0;
+}
+
+#logo {
+    width:5vw;
+    height:auto;
+    margin:0;
+    padding:1%;
+}
+
+#headline {
+    display:inline-block;
+    color:#ececec;
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    margin:0 0 0 10%;
+    padding:2px;
+}
+
+/*-- Input Container --*/
+#container {
+    background-color:white;
+    color:black;
+    border-radius:32px;
+}
+
+/*-- Container Labels --*/
+.labels {
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:inherit;
+    font-weight:800;
+    line-height:110%;
+    text-decoration:none;
+    /*padding:5% 0 0 0;
+    margin:5%;*/
+}
 
 /*-- Dropdowns --*/
 #dropdowns {
-    /*-- FOR DIV ID 'DROPDOWNS'--*/
+    font-family:proxima-nova, Helvetica, sans-serif;
+    font-size:16px;
+    color:#000;
 }
 
 #year {
@@ -63,4 +229,3 @@
 
 #retrieve {
     /*-- FOR 'RETRIEVE' BUTTON --*/
-}
