@@ -52,30 +52,18 @@ function findGame() {
     for (let x = 0; x <= aYear.length; x++) {
         if (year == aYear[x]) {
             concatYear = parseInt(aYear[x]);
-        
-            // Testing CONCATYEAR, expected output uses dropdowns
-            console.log(concatYear);
-            // RETURNING DROPDOWNS
         }
     }
     // Month
     for (let y = 0; y <= aMonth.length; y++) {
         if (month == aMonth[y]) {
             concatMonth = parseInt(aMonth[y]);
-        
-            // Testing CONCATMONTH, expected output uses dropdowns
-            console.log(concatMonth);
-            // RETURNING DROPDOWNS
         }
     }
     // Day
     for (let z = 0; z <= aDay.length; z++) {
         if (day == aDay[z]) {
             concatDay = parseInt(aDay[z]);
-        
-            // Testing CONCATDAY, expected output uses dropdowns
-            console.log(concatDay);
-            // RETURNING DROPDOWNS
         }
     }
 
