@@ -107,13 +107,13 @@ function findGame() {
             let object = JSON.parse(request.responseText);
             
             // Collecting data from JSON
-            let oHomeTeam = object.data.games.game[0].home_team_name;
-            let oAwayTeam = object.data.games.game[0].away_team_name;
-            let oWinningPitcherFirst = object.data.games.game[0].winning_pitcher_first;
-            let oWinningPitcherLast = object.data.games.game[0].winning_pitcher_last;
-            let oLosingPitcherFirst = object.data.games.game[0].losing_pitcher_first;
-            let oLosingPitcherLast = object.data.games.game[0].losing_pitcher_last;
-            let oVenue = object.data.games.game[0].venue;
+            let oHomeTeam = parse(object.data.games.game[0].home_team_name);
+            let oAwayTeam = parse(object.data.games.game[0].away_team_name);
+            let oWinningPitcherFirst = parse(object.data.games.game[0].winning_pitcher_first);
+            let oWinningPitcherLast = parse(object.data.games.game[0].winning_pitcher_last);
+            let oLosingPitcherFirst = parse(object.data.games.game[0].losing_pitcher_first);
+            let oLosingPitcherLast = parse(object.data.games.game[0].losing_pitcher_last);
+            let oVenue = parse(object.data.games.game[0].venue);
 
             // Stringifying collected JSON
             let stringify = JSON.stringify(object);
@@ -124,6 +124,9 @@ function findGame() {
             winningPitcher.innerHTML = parse(oWinningPitcherFirst + " " + oWinningPitcherLast);
             losingPitcher.innerHTML = parse(oLosingPitcherFirst + " " + oLosingPitcherLast);
             venue.innerHTML = parse(oVenue);
+        }
+        else {
+            alert("Something went wrong. Try again.");
         }
     }
     
