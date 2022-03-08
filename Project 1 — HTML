@@ -33,14 +33,10 @@
     <!-- Navbar -->
     <div id="navbar">
 
-        <div id="logo-container">
-
-            <img id="logo" src="https://www.mlbstatic.com/team-logos/league-on-dark/1.svg" alt="MLB Logo">
-
-        </div>
-
         <div id="text-container">
 
+            <img id="logo" src="https://www.mlbstatic.com/team-logos/league-on-dark/1.svg" alt="MLB Logo">
+            
             <p id="headline">
                 INFO-3168 Project 1: MLB Stats / Hayley Jolliffe
             </p>
@@ -116,11 +112,11 @@
     <button type="button" id="retrieve" onclick="findGame();">Retrieve</button>
     
     <div id="retrieved">
-        <textarea id="homeTeam"></textarea>
-        <textarea id="awayTeam"></textarea>
-        <textarea id="winningPitcher"></textarea>
-        <textarea id="losingPitcher"></textarea>
-        <textarea id="venue"></textarea>
+        <textarea id="homeTeam">Home Team</textarea>
+        <textarea id="awayTeam">Away Team</textarea>
+        <textarea id="winningPitcher">Winning Pitcher</textarea>
+        <textarea id="losingPitcher">Losing Pitcher</textarea>
+        <textarea id="venue">Venue</textarea>
     
     </div>
     
