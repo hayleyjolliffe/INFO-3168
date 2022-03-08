@@ -6,7 +6,7 @@
 
     Hayley_Project1.js
     
-    Hayley Jolliffe - [redacted]
+    Hayley Jolliffe - h_jolliffe128179
 
 */
 
@@ -21,6 +21,11 @@ let aYear = ['2016', '2017', '2018'];
 let aMonth = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 let aDay = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'];
 
+// Creating separate variables for concatenating URL
+let concatYear;
+let concatMonth;
+let concatDay;
+
 // Game stats output
 let homeTeam = $gel("homeTeam").innerHTML;
 let awayTeam = $gel("awayTeam").innerHTML;
@@ -31,6 +36,14 @@ let venue = $gel("venue").innerHTML;
 // Creating $gel function to reduce typing
 function $gel(id) {
     return document.getElementById(id);
+}
+
+// Validating date for findGame()
+// Year
+for (let i = 0; i <= aYear.length; i++) {
+    if (year == aYear[i]) {
+
+    }
 }
 
 // Creating findGame() function for retrieving game stats
