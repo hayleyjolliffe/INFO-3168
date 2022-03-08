@@ -27,11 +27,11 @@ let concatMonth = 0;
 let concatDay = 0;
 
 // Game stats output
-let homeTeam = $gel("homeTeam").innerHTML;
-let awayTeam = $gel("awayTeam").innerHTML;
-let winningPitcher = $gel("winningPitcher").innerHTML;
-let losingPitcher = $gel("losingPitcher").innerHTML;
-let venue = $gel("venue").innerHTML;
+let homeTeam = $gel("homeTeam");
+let awayTeam = $gel("awayTeam");
+let winningPitcher = $gel("winningPitcher");
+let losingPitcher = $gel("losingPitcher");
+let venue = $gel("venue");
 
 // Creating $gel function to reduce typing
 function $gel(id) {
@@ -105,6 +105,7 @@ function findGame() {
     function call() {
         if (request.status === ISOK) {
             let object = JSON.parse(request.responseText);
+            
             // Collecting data from JSON
             let oHomeTeam = object.data.games.game[0].home_team_name;
             let oAwayTeam = object.data.games.game[0].away_team_name;
@@ -118,11 +119,11 @@ function findGame() {
             let stringify = JSON.stringify(object);
 
             // Populating textareas with JSON data
-            homeTeam = oHomeTeam;
-            awayTeam = oAwayTeam;
-            winningPitcher = (oWinningPitcherFirst + " " + oWinningPitcherLast);
-            losingPitcher = (oLosingPitcherFirst + " " + oLosingPitcherLast);
-            venue = oVenue;
+            homeTeam.innerHTML = parse(oHomeTeam);
+            awayTeam.innerHTML = parse(oAwayTeam);
+            winningPitcher.innerHTML = parse(oWinningPitcherFirst + " " + oWinningPitcherLast);
+            losingPitcher.innerHTML = parse(oLosingPitcherFirst + " " + oLosingPitcherLast);
+            venue.innerHTML = parse(oVenue);
         }
     }
     
