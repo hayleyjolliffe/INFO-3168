@@ -49,30 +49,38 @@ function refresh() {
 function findGame() {
     // Validating date for findGame()
     // Year
-    for (let i = 0; i <= aYear.length; i++) {
-        if (year == aYear[i]) {
-            console.log(concatYear);
-            concatYear = parseInt(aYear[i]);
+    for (let x = 0; x <= aYear.length; x++) {
+        if (year == aYear[x]) {
+            concatYear = parseInt(aYear[x]);
         
-            // Testing CONCATYEAR, expected output '2016'
+            // Testing CONCATYEAR, expected output uses dropdowns
             console.log(concatYear);
-            // RETURNING NaN
+            // RETURNING DROPDOWNS
+        }
+    }
+    // Month
+    for (let y = 0; y <= aMonth.length; y++) {
+        if (month == aMonth[y]) {
+            concatMonth = parseInt(aMonth[y]);
+        
+            // Testing CONCATMONTH, expected output uses dropdowns
+            console.log(concatMonth);
+            // RETURNING DROPDOWNS
+        }
+    }
+    // Day
+    for (let z = 0; z <= aDay.length; z++) {
+        if (day == aDay[z]) {
+            concatDay = parseInt(aDay[z]);
+        
+            // Testing CONCATDAY, expected output uses dropdowns
+            console.log(concatDay);
+            // RETURNING DROPDOWNS
         }
     }
 
     // AJAX call to pull game stats
     let xhttp = new XMLHttpRequest();
-
-    // Testing YEAR, expected output '2017'
-    console.log(year);
-
-    // Testing MONTH, expected output 'June' OR '06'
-    console.log(month);
-
-    // Testing DAY, expected output '14'
-    console.log(day);
-
-    // ALL RETURNING 1 JAN. 2016
 }
 
 
