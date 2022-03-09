@@ -36,7 +36,7 @@
         <div id="text-container">
 
             <img id="logo" src="https://www.mlbstatic.com/team-logos/league-on-dark/1.svg" alt="MLB Logo">
-            
+
             <p id="headline">
                 INFO-3168 Project 1: MLB Stats / Hayley Jolliffe
             </p>
@@ -105,27 +105,32 @@
             <option value="29">29</option>
             <option value="30">30</option>
             <option value="31">31</option>
-        </select>
+        </select><br />
+
+        <!-- 'Retrieve' button for search function -->
+        <button type="button" id="retrieve" onclick="asyncData();">Retrieve</button>
+    
     </div>
     
-    <!-- 'Retrieve' button for search function -->
-    <button type="button" id="retrieve" onclick="findGame();">Retrieve</button>
-    
     <div id="retrieved">
-        <textarea id="homeTeam">Home Team</textarea>
-        <textarea id="awayTeam">Away Team</textarea>
-        <textarea id="winningPitcher">Winning Pitcher</textarea>
-        <textarea id="losingPitcher">Losing Pitcher</textarea>
-        <textarea id="venue">Venue</textarea>
+        Home Team:<br />
+        <input type="text" id="homeTeam"><br />
+        Away Team:<br />
+        <input type="text" id="awayTeam"><br />
+        Winning Pitcher:<br />
+        <input type="text" id="winningPitcher"><br />
+        Losing Pitcher:<br />
+        <input type="text" id="losingPitcher"><br />
+        Venue:<br />
+        <input type="text" id="venue"><br />
     
     </div>
     
     <div id="buttons">
-        <button id="" onclick="">Previous Game</button>
-        <button id="" onclick="">Next Game</button>
-        <button id="" onclick="">Save Changes</button>
+        <button id="" onclick="previous();">Previous Game</button>
+        <button id="" onclick="next();">Next Game</button>
+        <button id="" onclick="save();">Save Changes</button>
     </div>
-
 </div>
 
 <script src="Hayley_Project1.js"></script>
