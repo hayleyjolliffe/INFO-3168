@@ -113,23 +113,23 @@
     </div>
     
     <div id="retrieved">
-        Home Team:<br />
+        <p class="dataLabel">Home Team:</p>
         <input type="text" id="homeTeam"><br />
-        Away Team:<br />
+        <p class="dataLabel">Away Team:</p>
         <input type="text" id="awayTeam"><br />
-        Winning Pitcher:<br />
+        <p class="dataLabel">Winning Pitcher:</p>
         <input type="text" id="winningPitcher"><br />
-        Losing Pitcher:<br />
+        <p class="dataLabel">Losing Pitcher:</p>
         <input type="text" id="losingPitcher"><br />
-        Venue:<br />
-        <input type="text" id="venue"><br />
-    
+        <p class="dataLabel">Venue:</p>
+        <input type="text" id="venue">
+        <br /><br />
     </div>
     
     <div id="buttons">
-        <button id="" onclick="previous();">Previous Game</button>
-        <button id="" onclick="next();">Next Game</button>
-        <button id="" onclick="save();">Save Changes</button>
+        <button onclick="previous();">Previous Game</button>
+        <button onclick="next();">Next Game</button>
+        <button onclick="save();">Save Changes</button>
     </div>
 </div>
 
