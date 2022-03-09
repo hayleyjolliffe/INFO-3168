@@ -90,38 +90,59 @@ function asyncData() {
 
 // Creating 'Previous Game' functino
 function previous() {
-    var newYear = year - 1;
-    var newMonth = month - 1;
-    var newDay = day - 1;
+    var lastMonth = month - 1;
+    var lastDay = day - 1;
 
     // Validating date inputs
-    var newTempMonth;
-    var newTempDay;
+    var lastTempMonth;
+    var lastTempDay;
 
     if (month < 10) {
-        newTempMonth = "0" + month;
+        lastTempMonth = "0" + lastMonth;
     }
     else {
-        newTempMonth = month;
+        lastTempMonth = lastMonth;
     }
     if (day < 10) {
-        newTempDay = "0" + month;
+        lastTempDay = "0" + lastDay;
     }
     else {
-        newTempDay = day;
+        lastTempDay = lastDay;
     }
 
-    var newTempURL = "https://gd2.mlb.com/components/game/mlb/year_" + year + "/month_" + newTempMonth + "/day_" + newTempDay + "/master_scoreboard.json";
+    var lastTempURL = "https://gd2.mlb.com/components/game/mlb/year_" + year + "/month_" + lastTempMonth + "/day_" + lastTempDay + "/master_scoreboard.json";
 
-    asyncJSON(newTempURL);
+    asyncJSON(lastTempURL);
 }
 
 // Creating 'Next Game' function
 function next() {
+    var nextMonth = month + 1;
+    var nextDay = day + 1;
 
+    // Validating date inputs
+    var nextTempMonth;
+    var nextTempDay;
+
+    if (month < 10) {
+        nextTempMonth = "0" + nextMonth;
+    }
+    else {
+        nextTempMonth = nextMonth;
+    }
+    if (day < 10) {
+        nextTempDay = "0" + nextDay;
+    }
+    else {
+        nextTempDay = nextDay;
+    }
+
+    var nextTempURL = "https://gd2.mlb.com/components/game/mlb/year_" + year + "/month_" + nextTempMonth + "/day_" + nextTempDay + "/master_scoreboard.json";
+
+    asyncJSON(nextTempURL);
 }
 
 // Creating 'Save Changes' function
 function save() {
-
+    
 }
