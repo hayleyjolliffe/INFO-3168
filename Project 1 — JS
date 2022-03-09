@@ -9,127 +9,78 @@
     Hayley Jolliffe - [redacted]
 
 */
-
-// Creating globals for storing inputs
-// Game date input
-let year = parseInt($gel("year").value);
-let month = parseInt($gel("month").value);
-let day = parseInt($gel("day").value);
-
-// Date arrays
-let aYear = [2016, 2017, 2018];
-let aMonth = [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12];
-let aDay = [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-
-// Creating separate variables for concatenating URL
-let concatYear = 0;
-let concatMonth = 0;
-let concatDay = 0;
-
-// Game stats output
-let homeTeam = $gel("homeTeam");
-let awayTeam = $gel("awayTeam");
-let winningPitcher = $gel("winningPitcher");
-let losingPitcher = $gel("losingPitcher");
-let venue = $gel("venue");
-
 // Creating $gel function to reduce typing
 function $gel(id) {
     return document.getElementById(id);
 }
 
-// Creating refresh() function for date input onchange()
+var year = parseInt($gel("year").value);
+var month = parseInt($gel("month").value);
+var day = parseInt($gel("day").value);
+
+// Creating function for refreshing date
 function refresh() {
     year = parseInt($gel("year").value);
     month = parseInt($gel("month").value);
     day = parseInt($gel("day").value);
 }
 
-// Creating findGame() function for retrieving game stats
-function findGame() {
-    // Validating date for findGame()
-    // Year
-    for (let x = 0; x <= aYear.length; x++) {
-        if (year == aYear[x]) {
-            concatYear = parseInt(aYear[x]);
-        }
-    }
-    // Month
-    for (let y = 0; y <= aMonth.length; y++) {
-        if (month == aMonth[y]) {
-            concatMonth = parseInt(aMonth[y]);
-        }
-    }
-    // Day
-    for (let z = 0; z <= aDay.length; z++) {
-        if (day == aDay[z]) {
-            concatDay = parseInt(aDay[z]);
-        }
-    }
+// Creating AJAX function
+const ISOK = 200;
+let request = new XMLHttpRequest();
 
-    // Creating async AJAX function
-    const ISOK = 200;
-    let request = new XMLHttpRequest();
-
-    function getAsync() {
-        // Building URL
-        // CONCAT URL SHOULD BE https://gd2.mlb.com/components/game/mlb/year_XXXX/month_XX/day_XX/master_scoreboard.json
-        let baseball = "";
-        // Validating month
-        if (concatMonth < 10) {
-            concatMonth = "0" + concatMonth;
-        }
-        else {
-            concatMonth = concatMonth;
-        }
-        // Validating day
-        if (concatDay < 10) {
-            concatDay = "0" + concatDay;
-        }
-        else {
-            concatDay = concatDay;
-        }
-        
-        // Concatenating
-        baseball = "https://gd2.mlb.com/components/game/mlb/year_" + concatYear + "/month_" + concatMonth + "/day_" + concatDay + "/master_scoreboard.json";
-        // Checking URL concatenation
-        console.log(baseball);
-        
-        // Calling event handler
-        request.onload = call();
-        request.open("GET", baseball, true);
-        request.send();
-    }
-
-    
-    function call() {
+function asyncJSON(url) {
+    // Creating event handler
+    request.onload = function() {
         if (request.status === ISOK) {
-            let object = JSON.parse(request.responseText);
+            var object = JSON.parse(request.responseText);
+
+            var jsonHomeTeam = object.data.games.game[0].home_team_name;
+            var jsonAwayTeam = object.data.games.game[0].away_team_name;
+            var jsonWinningPitcher = (object.data.games.game[0].winning_pitcher.first + " " + object.data.games.game[0].winning_pitcher.last);
+            var jsonLosingPitcher = (object.data.games.game[0].losing_pitcher.first + " " + object.data.games.game[0].losing_pitcher.last);
+            var jsonVenue = object.data.games.game[0].venue;
+
+            // Clear the div
+            $gel("json").innerHTML = "";
             
-            // Collecting data from JSON
-            let oHomeTeam = parse(object.data.games.game[0].home_team_name);
-            let oAwayTeam = parse(object.data.games.game[0].away_team_name);
-            let oWinningPitcherFirst = parse(object.data.games.game[0].winning_pitcher_first);
-            let oWinningPitcherLast = parse(object.data.games.game[0].winning_pitcher_last);
-            let oLosingPitcherFirst = parse(object.data.games.game[0].losing_pitcher_first);
-            let oLosingPitcherLast = parse(object.data.games.game[0].losing_pitcher_last);
-            let oVenue = parse(object.data.games.game[0].venue);
+            // Putting game data into textboxes
+            $gel("homeTeam").value = jsonHomeTeam;
+            $gel("awayTeam").value = jsonAwayTeam;
+            $gel("winningPitcher").value = jsonWinningPitcher;
+            $gel("losingPitcher").value = jsonLosingPitcher;
+            $gel("venue").value = jsonVenue;
 
-            // Stringifying collected JSON
-            let stringify = JSON.stringify(object);
+        }
+    };
+    request.open("GET", url, true);
+    request.send();
+}
 
-            // Populating textareas with JSON data
-            homeTeam.innerHTML = parse(oHomeTeam);
-            awayTeam.innerHTML = parse(oAwayTeam);
-            winningPitcher.innerHTML = parse(oWinningPitcherFirst + " " + oWinningPitcherLast);
-            losingPitcher.innerHTML = parse(oLosingPitcherFirst + " " + oLosingPitcherLast);
-            venue.innerHTML = parse(oVenue);
-        }
-        else {
-            alert("Something went wrong. Try again.");
-        }
+function asyncData() {
+    year = parseInt($gel("year").value);
+    month = parseInt($gel("month").value);
+    day = parseInt($gel("day").value);
+
+    // Validating date inputs
+    var tempMonth;
+    var tempDay;
+
+    if (month < 10) {
+        tempMonth = "0" + month;
     }
+    else {
+        tempMonth = month;
+    }
+    // Validating day
+    if (day < 10) {
+        tempDay = "0" + day;
+    }
+    else {
+        tempDay = day;
+    }
+
+    var tempURL = "https://gd2.mlb.com/components/game/mlb/year_" + year + "/month_" + tempMonth + "/day_" + tempDay + "/master_scoreboard.json";
     
-    // Call getAsync to get the data
-    getAsync();
+    asyncJSON(tempURL);
 }
