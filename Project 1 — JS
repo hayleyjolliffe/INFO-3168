@@ -144,5 +144,19 @@ function next() {
 
 // Creating 'Save Changes' function
 function save() {
-    
+    var savedGameStats = {
+        "Home_Team":$gel("homeTeam").value,
+        "Away_Team":$gel("awayTeam").value,
+        "Winning_Pitcher":$gel("winningPitcher").value,
+        "Losing_Pitcher":$gel("losingPitcher").value,
+        "Venue":$gel("venue").value
+    };
+
+    console.log(savedGameStats);
+    console.log("Home Team: " + savedGameStats.Home_Team);
+    console.log("Away Team: " + savedGameStats.Away_Team);
+    console.log("Winning Pitcher: " + savedGameStats.Winning_Pitcher);
+    console.log("Losing Pitcher: " + savedGameStats.Losing_Pitcher);
+    console.log("Venue: " + savedGameStats.Venue);
+    alert("Game saved to console!");
 }
