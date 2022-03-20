@@ -1,4 +1,4 @@
-<html>
+ <html>
 	<head>
 		<title>Lab 4</title>
 		<script language="JavaScript" type="text/JavaScript">
@@ -12,14 +12,29 @@
 			
 			// return inner anonymous function
 			return function(caller) {
-                let caller = {
-                    Timer1:0,
-                    Timer2:0,
-                    Timer3:0
+                // counter increment
+                counter++;
+
+                // add caller to log array
+                callerLog.push(caller);
+
+                // add current datetime to datetime array
+                dateTime.push(new Date);
+
+                // creating output
+                let output = counter + " " + callerLog[counter -1 ] + " " + dateTime[counter - 1];
+                
+                // calling outputFunc
+                outputFunc(output);
+
+                // counter reset
+                if (counter > 10) {
+                    for (let i = 0; i < timers.length; i++) {
+                        clearInterval(timers[i]);
+                    }
+                    outputFunc("<br>" + "Logging stopped.");
                 }
-				
-				console.log(caller);
-			}
+            }
 			
 		})(printFunc); //IIFE
 		
