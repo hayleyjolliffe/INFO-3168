@@ -4,7 +4,7 @@
 ##### Midterm, due 02/14/22 — DONE
 ##### Lab 3, due 03/07/22 — DONE
 ##### Project 1, due 03/10/22 — DONE
-##### Lab 4, due 03/21/22 — IN PROGRESS
-##### Lab 5, due 04/04/22
+##### Lab 4, due 03/21/22 — DONE
+##### Lab 5, due 04/04/22 — IN PROGRESS
 ##### Project 2, due 04/14/22
 ##### Final, due 04/18/22
