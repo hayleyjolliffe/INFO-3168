@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Lab 4 Solution</title>
+		<script language="JavaScript" type="text/JavaScript">
+		
+		let timers = [];
+		
+		let log = (function(outputFunc) {
+			let counter = 0;
+			let callerLog = [];
+			let dateTime = [];
+			
+			// return inner anonymous function
+			return function(caller) {
+				counter += 1;
+				callerLog.push(caller);
+				dateTime.push(new Date());
+				outputFunc(counter + " " + callerLog[callerLog.length - 1] + " " + dateTime[dateTime.length - 1]);
+				
+				if (counter > 10) {
+					for (let i = 0; i < timers.length; i++) {
+						clearInterval(timers[i]);
+					}
+					document.write("<br>Logging stopped");
+				}
+			}
+		})(printFunc);  //IIFE
+		
+		function printFunc(output) {
+			document.write(output + "<br>");
+		}
+		
+		function startMeUp() {
+			timers.push(setInterval("log('Timer1')", 1000));
+			timers.push(setInterval("log('Timer2')", 1200));
+			timers.push(setInterval("log('Timer3')", 1700));
+		}
+		
+		</script>
+	</head>
+	<body onload="startMeUp();">
+	
+	</body>
+</html>
