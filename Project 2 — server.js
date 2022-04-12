@@ -25,5 +25,32 @@ function clearFields() {
 
 // ADD button verifies field contents
 function verifyContents() {
-
+    // Verifying customer textbox
+    if (custBox.innerHTML == null || NaN) {
+        console.log('Customer ID verification failed. Retrying...');
+    }
+    // Verifying first name textbox
+    if (firstBox.innerHTML == null) {
+        console.log('First name verification failed. Retrying...');
+    }
+    // Verifying last name textbox
+    if (lastBox.innerHTML == null) {
+        console.log('Last name verification failed. Retrying...');
+    }
+    // Verifying address textbox
+    if (addBox.innerHTML == null) {
+        console.log('Address verification failed. Retrying...');
+    }
+    // Verifying city textbox
+    if (addBox.innerHTML == null) {
+        console.log('City verification failed. Retrying...');
+    }
+    // Verifying province textbox
+    if (proBox.innerHTML == null) {
+        console.log('Province verification failed. Retrying...');
+    }
+    // Verifying postal code textbox
+    if (postBox.innerHTML == null) {
+        console.log('Postal code verification failed. Retrying...');
+    }
 };
