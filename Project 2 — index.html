@@ -3,24 +3,25 @@
 <head>
     <title>Customers</title>
     <meta charset="utf-8">
-    <style type="text/css" rel="stylesheet" href="/style.css"></style>
+    <style type="text/css">
+    </style>
 </head>
 <body>
     <form>
-        <p>Customer # <input type="text" name="customer" value=""></p>
-        <p>First Name <input type="text" name="firstname" value=""></p>
-        <p>Last Name <input type="text" name="lastname" value=""></p>
-        <p>Address <input type="text" name="address" value=""></p>
-        <p>City <input type="text" name="city" value=""></p>
-        <p>Province <input type="text" name="province" value=""></p>
-        <p>Postal <input type="text" name="postal" value=""></p>
+        <p>Customer # <input type="text" id="customer" value=""></p>
+        <p>First Name <input type="text" id="firstname" value=""></p>
+        <p>Last Name <input type="text" id="lastname" value=""></p>
+        <p>Address <input type="text" id="address" value=""></p>
+        <p>City <input type="text" id="city" value=""></p>
+        <p>Province <input type="text" id="province" value=""></p>
+        <p>Postal <input type="text" id="postal" value=""></p>
         <br>
         <ul>
-            <button>New</button>
-            <button>Add</button>
-            <button>Update</button>
-            <button>Delete</button>
-            <button>Find</button>
+            <li><button id="newBtn" onclick="clearFields();">New</button></li>
+            <li><button id="addBtn" onclick="verifyContents();">Add</button></li>
+            <li><button id="updateBtn" onclick="updateContents();">Update</button></li>
+            <li><button>Delete</button></li>
+            <li><button>Find</button></li>
         </ul>
     </form>
 </body>
