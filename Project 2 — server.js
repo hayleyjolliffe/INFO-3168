@@ -3,6 +3,11 @@ function $gel(id) {
     return document.getElementById(id);
 }
 
+// $mesh function for reduced typing
+function $mesh(id) {
+    return console.log(id);
+}
+
 // Setting input variables
 let custBox = $gel("customer");
 let firstBox = $gel("firstname");
@@ -25,5 +30,11 @@ function clearFields() {
 
 // ADD button verifies field contents
 function verifyContents() {
-    
+    $mesh(custBox.value);
+    $mesh(firstBox.value);
+    $mesh(lastBox.value);
+    $mesh(addBox.value);
+    $mesh(cityBox.value);
+    $mesh(proBox.value);
+    $mesh(postBox.value);
 };
