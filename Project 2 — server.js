@@ -23,10 +23,7 @@ function clearFields() {
     postBox.innerHTML = "";
 };
 
-//
+// ADD button verifies field contents
+function verifyContents() {
 
-//
-
-//
-
-//
+};
