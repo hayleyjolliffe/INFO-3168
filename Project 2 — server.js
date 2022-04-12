@@ -25,46 +25,63 @@ function clearFields() {
 
 // ADD button verifies field contents
 function verifyContents() {
-    // Verifying customer textbox
-    if (custBox.innerHTML == null || NaN) {
+    // START verification
+    // Verifying customer ID textbox
+    if (custBox.innerHTML == null) {
         console.log('Customer ID verification failed. Retrying...');
-        // Reset box
-        custBox.innerHTML = "";
+        // Reset boxes
+        clearFields();
     }
-    // Verifying first name textbox
-    if (firstBox.innerHTML == null) {
-        console.log('First name verification failed. Retrying...');
-        // Reset box
-        firstBox.innerHTML = "";
-    }
-    // Verifying last name textbox
-    if (lastBox.innerHTML == null) {
-        console.log('Last name verification failed. Retrying...');
-        // Reset box
-        lastBox.innerHTML = "";
-    }
-    // Verifying address textbox
-    if (addBox.innerHTML == null) {
-        console.log('Address verification failed. Retrying...');
-        // Reset box
-        addBox.innerHTML = "";
-    }
-    // Verifying city textbox
-    if (addBox.innerHTML == null) {
-        console.log('City verification failed. Retrying...');
-        // Reset box
-        cityBox.innerHTML = "";
-    }
-    // Verifying province textbox
-    if (proBox.innerHTML == null) {
-        console.log('Province verification failed. Retrying...');
-        // Reset box
-        proBox.innerHTML = "";
-    }
-    // Verifying postal code textbox
-    if (postBox.innerHTML == null) {
-        console.log('Postal code verification failed. Retrying...');
-        // Reset box
-        postBox.innerHTML = "";
+    else {
+        // Verifying first name textbox
+        if (firstBox.innerHTML == null) {
+            console.log('First name verification failed. Retrying...');
+            // Reset boxes
+            clearFields();
+        }
+        else {
+            // Verifying last name textbox
+            if (lastBox.innerHTML == null) {
+                console.log('Last name verification failed. Retrying...');
+                // Reset boxes
+                clearFields();
+            }
+            else {
+                // Verifying address textbox
+                if (addBox.innerHTML == null) {
+                    console.log('Address verification failed. Retrying...');
+                    // Reset boxes
+                    clearFields();
+                }
+                else {
+                    // Verifying city textbox
+                    if (cityBox.innerHTML == null) {
+                        console.log('City verification failed. Retrying...');
+                        // Reset boxes
+                        clearFields();
+                    }
+                    else {
+                        // Verifying province textbox
+                        if (proBox.innerHTML == null) {
+                            console.log('Province verification failed. Retrying...');
+                            // Reset boxes
+                            clearFields();
+                        }
+                        else {
+                            // Verifying postal code textbox
+                            if (postBox.innerHTML == null) {
+                                console.log('Postal code verification failed. Retrying...');
+                                // Reset boxes
+                                clearFields();
+                            }
+                            else {
+                                console.log('Verification success. Moving forward now.');
+                                // WRITING TO FILE GOES HERE
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 };
