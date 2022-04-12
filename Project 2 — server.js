@@ -1,3 +1,8 @@
+// $gel function for reduced typing
+function $gel(id) {
+    return document.getElementById(id);
+}
+
 // Setting input variables
 let custBox = $gel("customer");
 let firstBox = $gel("firstname");
