@@ -26,6 +26,19 @@
     </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="server.js"></script>
+    <script>
+        // POST request
+        function postRequest() {
+            $.post("/api/data", {
+                cusID: document.getElementById("txtCusID").value
+            },
+            // Callback
+            function (data, status) {
+                document.getElementById("txtFirst").value = data.first;
+                document.getElementById("txtLast").value = data.last;
+                document.getElementById("txtAddress").value = data.address;
+            });
+        }
+    </script>
 </body>
 </html>
