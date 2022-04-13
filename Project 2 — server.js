@@ -25,6 +25,8 @@ app.post('/api/data', (request, response) => {
     let pbody = request.body;
 
     if (pbody.customer === NOTNULL) {
+        pbody.customer = $gel(customer).value;
+        $mesh(pbody.customer);
         pbody.firstname = $gel(firstname).value;
         $mesh(pbody.firstname);
         pbody.lastname = $gel(lastname).value;
@@ -41,9 +43,13 @@ app.post('/api/data', (request, response) => {
         console.log(pbody);
     }
     else {
-        pbody.first = "Not found";
-        pbody.last = "";
+        pbody.customer = "Not found";
+        pbody.firstname = "";
+        pbody.lastname = "";
         pbody.address = "";
+        pbody.city = "";
+        pbody.province = "";
+        pbody.postal = "";
         response.send(pbody);
         console.log(pbody);
     }
