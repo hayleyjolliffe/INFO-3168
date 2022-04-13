@@ -31,5 +31,22 @@
     </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        // ***************************************************
+        // post Request event handler uses jQuery .post method
+        // to issue request and process response (callback)
+        function postRequest() {
+            $.post("/api/data", {
+                // this is the data being posted to the web server
+                cusID: document.getElementById("txtCusID").value
+            },
+            // callback function returns status and data as object literal
+            function (data, status) {
+                document.getElementById("txtFirst").value = data.first;
+                document.getElementById("txtLast").value = data.last;
+                document.getElementById("txtAddress").value = data.address;
+            });
+        }
+    </script>
 </body>
 </html>
