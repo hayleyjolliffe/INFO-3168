@@ -38,13 +38,14 @@
         function postRequest() {
             $.post("/api/data", {
                 // this is the data being posted to the web server
-                cusID: document.getElementById("txtCusID").value
+                cusID: document.getElementById("customer").value
             },
             // callback function returns status and data as object literal
             function (data, status) {
-                document.getElementById("txtFirst").value = data.first;
-                document.getElementById("txtLast").value = data.last;
-                document.getElementById("txtAddress").value = data.address;
+                document.getElementById("firstname").value = data.firstname;
+                document.getElementById("lastname").value = data.lastname;
+                document.getElementById("address").value = data.address;
+                document.getElementById("")
             });
         }
     </script>
